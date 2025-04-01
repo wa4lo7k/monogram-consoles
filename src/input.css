@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+/* Black */
+@font-face {
+    font-family: "prompt-black";
+    src: url(../Fonts/Prompt-Black.ttf);
+}
+@theme {
+    --font-prompt-black: "prompt-black", "sans-serif";
+}
+
+/* Black Italic */
+@font-face {
+    font-family: "prompt-blackitalic";
+    src: url(../Fonts/Prompt-BlackItalic.ttf);
+}
+@theme {
+    --font-prompt-blackitalic: "prompt-blackitalic", "sans-serif";
+}
+
+/* Bold */
+@font-face {
+    font-family: "prompt-bold";
+    src: url(../Fonts/Prompt-Bold.ttf);
+}
+@theme {
+    --font-prompt-bold: "prompt-bold", "sans-serif";
+}
+
+/* Bold Italic */
+@font-face {
+    font-family: "prompt-bolditalic";
+    src: url(../Fonts/Prompt-BoldItalic.ttf);
+}
+@theme {
+    --font-prompt-bolditalic: "prompt-bolditalic", "sans-serif";
+}
+
+/* Extra Bold */
+@font-face {
+    font-family: "prompt-extrabold";
+    src: url(../Fonts/Prompt-ExtraBold.ttf);
+}
+@theme {
+    --font-prompt-extrabold: "prompt-extrabold", "sans-serif";
+}
+
+/* Extra Bold Italic */
+@font-face {
+    font-family: "prompt-extrabolditalic";
+    src: url(../Fonts/Prompt-ExtraBoldItalic.ttf);
+}
+@theme {
+    --font-prompt-extrabolditalic: "prompt-extrabolditalic", "sans-serif";
+}
+
+/* Extra Light */
+@font-face {
+    font-family: "prompt-extralight";
+    src: url(../Fonts/Prompt-ExtraLight.ttf);
+}
+@theme {
+    --font-prompt-extralight: "prompt-extralight", "sans-serif";
+}
+
+/* Extra Light Italic */
+@font-face {
+    font-family: "prompt-extralightitalic";
+    src: url(../Fonts/Prompt-ExtraLightItalic.ttf);
+}
+@theme {
+    --font-prompt-extralightitalic: "prompt-extralightitalic", "sans-serif";
+}
+
+/* Italic */
+@font-face {
+    font-family: "prompt-italic";
+    src: url(../Fonts/Prompt-Italic.ttf);
+}
+@theme {
+    --font-prompt-italic: "prompt-italic", "sans-serif";
+}
+
+/* Light */
+@font-face {
+    font-family: "prompt-light";
+    src: url(../Fonts/Prompt-Light.ttf);
+}
+@theme {
+    --font-prompt-light: "prompt-light", "sans-serif";
+}
+
+/* Light Italic */
+@font-face {
+    font-family: "prompt-lightitalic";
+    src: url(../Fonts/Prompt-LightItalic.ttf);
+}
+@theme {
+    --font-prompt-lightitalic: "prompt-lightitalic", "sans-serif";
+}
+
+/* Medium */
+@font-face {
+    font-family: "prompt-medium";
+    src: url(../Fonts/Prompt-Medium.ttf);
+}
+@theme {
+    --font-prompt-medium: "prompt-medium", "sans-serif";
+}
+
+/* Medium Italic */
+@font-face {
+    font-family: "prompt-mediumitalic";
+    src: url(../Fonts/Prompt-MediumItalic.ttf);
+}
+@theme {
+    --font-prompt-mediumitalic: "prompt-mediumitalic", "sans-serif";
+}
+
+/* Regular */
+@font-face {
+    font-family: "prompt-regular";
+    src: url(../Fonts/Prompt-Regular.ttf);
+}
+@theme {
+    --font-prompt-regular: "prompt-regular", "sans-serif";
+}
+
+/* Semi Bold */
+@font-face {
+    font-family: "prompt-semibold";
+    src: url(../Fonts/Prompt-SemiBold.ttf);
+}
+@theme {
+    --font-prompt-semibold: "prompt-semibold", "sans-serif";
+}
+
+/* Semi Bold Italic */
+@font-face {
+    font-family: "prompt-semibolditalic";
+    src: url(../Fonts/Prompt-SemiBoldItalic.ttf);
+}
+@theme {
+    --font-prompt-semibolditalic: "prompt-semibolditalic", "sans-serif";
+}
+
+/* Thin */
+@font-face {
+    font-family: "prompt-thin";
+    src: url(../Fonts/Prompt-Thin.ttf);
+}
+@theme {
+    --font-prompt-thin: "prompt-thin", "sans-serif";
+}
+
+/* Thin Italic */
+@font-face {
+    font-family: "prompt-thinitalic";
+    src: url(../Fonts/Prompt-ThinItalic.ttf);
+}
+@theme {
+    --font-prompt-thinitalic: "prompt-thinitalic", "sans-serif";
+}

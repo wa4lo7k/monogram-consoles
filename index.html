@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monogram - Console for Every Workflow</title>
+    <link href="/src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js" defer></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        .hero-container {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Full viewport height */
+            overflow: hidden;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        /* Fix for navbar positioning */
+        #nav-container {
+            width: 100%;
+            box-sizing: border-box;
+            left: 0;
+            margin: 0;
+        }
+        
+        @media (min-width: 640px) {
+            #nav-container {
+                margin-top: 1.5rem;
+                padding-left: 1rem;
+            }
+        }
+    </style>
+    <link rel="shortcut icon" href="images/logo.svg" type="png/svg">
+</head>
+<body>
+    <!-- Responsive Navbar -->
+    <nav id="nav-container" class="flex my-20 bg-blue-950 p-2 mt-0 sm:mt-6 text-sm items-center top-0 fixed z-50" x-data="{ isOpen: false }">
+        <!-- Logo/Brand -->
+        <h1 class="text-orange-200 font-bold hover:text-orange-400 transition-colors duration-300 flex items-center">
+            <i class='bx bx-radio text-3xl sm:text-4xl mr-2 font-prompt-bold'></i> MONOGRAM
+        </h1>
+      
+        <!-- Mobile Menu Button -->
+        <button @click="isOpen = !isOpen" class="lg:hidden ml-auto text-orange-200 hover:text-orange-400">
+            <i class="ri-menu-line text-2xl" x-show="!isOpen"></i>
+            <i class="ri-close-line text-2xl" x-show="isOpen"></i>
+        </button>
+
+        <!-- Navigation Links - Hidden on mobile, visible on large screens and up -->
+        <div class="hidden lg:flex space-x-2 xl:space-x-4 text-orange-200 ml-auto font-prompt-extralight ">
+          <a href="#how-it-works" class="hover:text-orange-400 transition-colors duration-300 text-xs sm:text-sm">HOW IT WORKS</a>
+          <a href="#workflows" class="hover:text-orange-400 transition-colors duration-300 text-xs sm:text-sm">WORKFLOWS</a>
+          <a href="#download" class="hover:text-orange-400 transition-colors duration-300 text-xs sm:text-sm">DOWNLOAD</a>
+          <a href="#blog" class="hover:text-orange-400 transition-colors duration-300 text-xs sm:text-sm">BLOG</a>
+          <a href="#support" class="hover:text-orange-400 transition-colors duration-300 text-xs sm:text-sm">SUPPORT</a>
+          <a href="#shop" class="hover:text-orange-400 transition-colors duration-300 text-xs sm:text-sm"><span class="font-semibold">SHOP</span></a>
+          
+          <!-- USD Icon and Text Together with Hover Effect -->
+          <div class="flex items-center text-orange-200 hover:text-orange-400 transition-colors duration-300 mr-2">
+            <!-- USD Icon (Remix Icon with fill-current) -->
+            <i class="ri-shopping-bag-line w-4 h-4 sm:w-5 sm:h-5 fill-current"></i>
+            <!-- USD Text -->
+            <a href="#currency" class="text-xs sm:text-sm">USD</a>
+          </div>
+        </div>
+
+        <!-- Mobile Menu - Shown when isOpen is true -->
+        <div 
+            x-show="isOpen" 
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 scale-95"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 scale-100"
+            x-transition:leave-end="opacity-0 scale-95"
+            class="absolute top-full right-0 w-48 bg-blue-950 p-4 rounded shadow-lg lg:hidden"
+        >
+            <div class="flex flex-col space-y-3 text-orange-200 font-prompt-extralight">
+                <a href="#how-it-works" class="hover:text-orange-400 transition-colors duration-300">HOW IT WORKS</a>
+                <a href="#workflows" class="hover:text-orange-400 transition-colors duration-300">WORKFLOWS</a>
+                <a href="#download" class="hover:text-orange-400 transition-colors duration-300">DOWNLOAD</a>
+                <a href="#blog" class="hover:text-orange-400 transition-colors duration-300">BLOG</a>
+                <a href="#support" class="hover:text-orange-400 transition-colors duration-300">SUPPORT</a>
+                <a href="#shop" class="hover:text-orange-400 transition-colors duration-300"><span class="font-semibold">SHOP</span></a>
+                
+                <!-- USD Icon and Text Together with Hover Effect -->
+                <div class="flex items-center text-orange-200 hover:text-orange-400 transition-colors duration-300">
+                    <!-- USD Icon (Remix Icon with fill-current) -->
+                    <i class="ri-shopping-bag-line w-5 h-5 fill-current mr-1"></i>
+                    <!-- USD Text -->
+                    <a href="#currency">USD</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Hero Section - Responsive with full-height image -->
+    <main class="hero-container">
+        <img src="/images/console.jpg" alt="console" class="hero-image">
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center text-orange-200 text-center w-full px-4">
+            <div class="hover:text-orange-400 transition-colors duration-500 font-prompt">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold whitespace-pre-line">
+                    A CONSOLE FOR  
+                    EVERY WORKFLOW
+                </h1>
+                <h3 class="text-base sm:text-lg md:text-xl mt-2">Discover the perfect console for yours.</h3>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Products Section - Responsive -->
+    <section class="mt-8 sm:mt-16"> 
+        <div class="flex flex-wrap text-blue-950 mx-2 sm:mx-4 my-4">
+            <!-- BLACK GAME CONSOLE -->
+            <div class="w-full sm:w-1/2 p-2">
+                <div class="bg-gray-200 p-2 sm:p-4">
+                    <img src="/images/object-1.jpg.webp" alt="console-1" class="w-full h-48 sm:h-64 object-cover">
+                </div>
+                <div class="max-w-full sm:max-w-[30rem] px-2">
+                    <h1 class="font-prompt-semibolditalic font-extrabold text-blue-950 hover:text-gray-500 transition-colors duration-300 text-lg sm:text-xl md:text-2xl">
+                        MINI CONSOLE
+                    </h1>
+                    <p class="font-prompt-light text-xs sm:text-sm text-blue-950 hover:text-gray-500 transition-colors duration-300">
+                        Ideal for everyday shortcuts. Adaptability to any workflow.
+                    </p>
+                </div>
+            </div>
+    
+            <!-- WHITE GAME CONSOLE -->
+            <div class="w-full sm:w-1/2 p-2">
+                <div class="bg-gray-200 p-2 sm:p-4">
+                    <img src="/images/object2-1.jpg.webp" alt="console-2" class="w-full h-48 sm:h-64 object-cover">
+                </div>
+                <div class="max-w-full sm:max-w-[30rem] px-2">
+                    <h1 class="font-prompt-semibolditalic font-extrabold text-blue-950 hover:text-gray-500 transition-colors duration-300 text-lg sm:text-xl md:text-2xl">
+                        AUDIO CONSOLE
+                    </h1>
+                    <p class="font-prompt-light text-xs sm:text-sm text-blue-950 hover:text-gray-500 transition-colors duration-300">
+                        Ideal for music and audio. Adaptability to any workflow.
+                    </p>
+                </div>
+            </div>
+    
+            <!-- TRANSPARENT GAME CONSOLE -->
+            <div class="w-full sm:w-1/2 p-2">
+                <div class="bg-gray-200 p-2 sm:p-4">
+                    <img src="/images/object-3-1.jpg.webp" alt="console-3" class="w-full h-48 sm:h-64 object-cover">
+                </div>
+                <div class="max-w-full sm:max-w-[30rem] px-2">
+                    <h1 class="font-prompt-semibolditalic font-extrabold text-blue-950 hover:text-gray-500 transition-colors duration-300 text-lg sm:text-xl md:text-2xl">
+                        PHOTO CONSOLE
+                    </h1>
+                    <p class="font-prompt-light text-xs sm:text-sm text-blue-950 hover:text-gray-500 transition-colors duration-300">
+                        Ideal for photo & video. Adaptability to any workflow .
+                    </p>
+                </div>
+            </div>
+    
+            <!-- PLAIN BLACK GAME CONSOLE -->
+            <div class="w-full sm:w-1/2 p-2">
+                <div class="bg-gray-200 p-2 sm:p-4">
+                    <img src="/images/object-4-1.jpg.webp" alt="console-4" class="w-full h-48 sm:h-64 object-cover">
+                </div>
+                <div class="max-w-full sm:max-w-[30rem] px-2">
+                    <h1 class="font-prompt-semibolditalic font-extrabold text-blue-950 hover:text-gray-500 transition-colors duration-300 text-lg sm:text-xl md:text-2xl">
+                        VIDEO CONSOLE
+                    </h1>
+                    <p class="font-prompt-light text-xs sm:text-sm text-blue-950 hover:text-gray-500 transition-colors duration-300">
+                        Ideal for Vidoe & Film. Adaptability to any work flow.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Width Image Section - Responsive -->
+    <section class="mt-4 sm:mt-8 mx-2 sm:mx-4">
+        <div class="bg-gray-200 p-2 sm:p-4 hover:bg-black/20 transition-colors duration-300">       
+            <img src="/images/object-full-4.jpg.webp" alt="object-full-2" class="w-full max-h-64 sm:max-h-96 object-cover">
+        </div>
+    </section>
+
+    <!-- Banner Section - Responsive -->
+    <section class="relative flex w-auto my-4 sm:my-8 mx-2 sm:mx-4 hover:bg-black/20 transition-all duration-300">
+        <img src="/images/shop-banner-module.jpg" alt="shop-banner-module" class="w-full h-auto">
+        <div class="absolute top-[15%] left-1/2 -translate-x-1/2 flex flex-col items-center text-blue-950 text-center w-full px-4">
+            <h1 class="text-xl sm:text-2xl md:text-3xl font-bold">CREATE YOUR OWN CONSOLE</h1>
+            <h4 class="text-base sm:text-lg md:text-xl mt-1 sm:mt-2">ADD-ON TO MAKE IT PERFECT</h4>
+        </div>
+    </section>
+    
+
+    <!-- Footer - Responsive -->
+    <footer class="bg-[#121847] text-[#E6C8C2] py-4 px-4 sm:px-8 text-xs mx-2 sm:mx-4">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-start gap-4 sm:gap-6">
+            <div class="w-1/2 sm:w-auto mb-4 sm:mb-0">
+                <h3 class="font-bold text-[10px] sm:text-xs">MONOGRAM</h3>
+                <p class="mt-1 text-[9px] sm:text-[10px]">
+                    305 King St. W.<br>
+                    Suite 502<br>
+                    Kitchener, ON<br>
+                    Canada
+                </p>
+            </div>
+            <div class="w-1/2 sm:w-auto mb-4 sm:mb-0">
+                <h3 class="font-bold text-[10px] sm:text-xs">QUICK LINKS</h3>
+                <ul class="mt-1 text-[9px] sm:text-[10px] space-y-1">
+                    <li><a href="#" class="hover:underline">Home</a></li>
+                    <li><a href="#" class="hover:underline">How it Works</a></li>
+                    <li><a href="#" class="hover:underline">Shop</a></li>
+                    <li><a href="#" class="hover:underline">Download</a></li>
+                </ul>
+            </div>
+            <div class="w-1/2 sm:w-auto mb-4 sm:mb-0">
+                <h3 class="font-bold text-[10px] sm:text-xs">HELP</h3>
+                <ul class="mt-1 text-[9px] sm:text-[10px] space-y-1">
+                    <li><a href="#" class="hover:underline">FAQs</a></li>
+                    <li><a href="#" class="hover:underline">Support Center</a></li>
+                    <li><a href="#" class="hover:underline">Shipping and Sales</a></li>
+                </ul>
+            </div>
+            <div class="w-1/2 sm:w-auto mb-4 sm:mb-0">
+                <h3 class="font-bold text-[10px] sm:text-xs">INFORMATION</h3>
+                <ul class="mt-1 text-[9px] sm:text-[10px] space-y-1">
+                    <li><a href="#" class="hover:underline">About Us</a></li>
+                    <li><a href="#" class="hover:underline">Work with us</a></li>
+                    <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:underline">Terms of Use</a></li>
+                    <li><a href="#" class="hover:underline">Terms of Sale</a></li>
+                    <li><a href="#" class="hover:underline">Press Kit</a></li>
+                </ul>
+            </div>
+            <div class="w-full sm:w-auto mt-4 sm:mt-0">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-2">
+                    <input type="email" placeholder="Email Address" class="p-1 rounded bg-white text-black text-[10px] w-full sm:w-auto">
+                    <button class="px-3 py-1 bg-[#E6C8C2] text-[#121847] rounded text-[10px] font-bold w-full sm:w-auto mt-2 sm:mt-0">SUBMIT</button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-4 flex flex-col sm:flex-row justify-between items-center">
+            <p class="text-[9px] mb-2 sm:mb-0">&copy; Yad e Ali aka wa4lo7k</p>
+            <div class="flex gap-3 text-sm">
+                <a href="#" class="hover:text-gray-400"><i class="ri-instagram-line"></i></a>
+                <a href="#" class="hover:text-gray-400"><i class="ri-twitter-line"></i></a>
+                <a href="#" class="hover:text-gray-400"><i class="ri-facebook-circle-line"></i></a>
+                <a href="#" class="hover:text-gray-400"><i class="ri-youtube-line"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
